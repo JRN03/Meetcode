@@ -1,38 +1,483 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto+Mono&family=Ubuntu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto+Mono&family=Ubuntu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
+@import url("//fonts.googleapis.com/css?family=Cabin");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  all: revert;
+}
+:root {
+  --sage: #92aa92;
+  --primary: #fdf9f0;
+  --dark: #282f3c;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+#root {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.authForm-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--sage);
+}
+.authForm {
+  background: var(--primary);
+  border-radius: 12px;
+  width: clamp(475px, 45%, 80vw);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  width: 70%;
+}
+.authForm h1 {
+  margin: 0;
+  padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+.authForm .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+label {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.7px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+input {
+  width: 100%;
+  height: 20px;
+  margin: 2px 0 10px 0;
+  border: 1px solid rgb(184, 196, 194);
+  border-radius: 4px;
+  transition: all 150ms ease-in-out 0s;
+  outline: none;
+}
+.authForm p {
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+}
+.authForm .accountToggle {
+  display: flex;
+  flex-direction: row;
+}
+.authForm .accountToggle button {
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.authForm .accountToggle button:hover {
+  color: #92bedb;
+}
+
+.authForm .submit {
+  width: 100%;
+}
+.authForm .submit button {
+  background: var(--sage);
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  width: 100%;
+  height: 30px;
+  text-decoration: none;
+}
+
+/*Start Room*/
+.room {
+  background: #282f3c;
+  width: 100vw;
+  color: white;
+  font-family: "Cabin";
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  align-items: center;
+}
+.room-wrapper {
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  font-family: "Cabin";
+  position: relative;
+}
+.room-wrapper .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.room-wrapper span {
+  color: var(--sage);
+}
+.problem {
+  display: flex;
+  width: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  margin: 20px 0;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 15px;
+  background: #383838;
+}
+.problem-wrapper {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.problem-wrapper h1 {
+  margin: 20px 0 10px 0;
+}
+.problem-wrapper hr {
+  width: 30%;
+  border: 1px solid var(--sage);
+  margin: 0;
+  padding: 0;
+}
+.problem-wrapper h2 {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+}
+.problem-wrapper h3 {
+  margin: 20px 0 0 0;
+  font-size: 22px;
+}
+.problem-wrapper p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.room-wrapper .main {
+  width: 100%;
+  height: 700px;
+  margin: 40px 0;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: #383838;
+  display: flex;
+}
+.sidebar {
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25px 15px;
+  border-right: 1px solid white;
+}
+.editor {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 15px;
+}
+.ace {
+  margin: 0;
+  padding: 0;
+  background: #1e1f25;
+  border: 1px solid white;
+  border-left: none;
+  border-bottom: none;
+  border-bottom-left-radius: 15px;
+}
+.ace_cursor {
+  color: white !important;
+}
+.ace_gutter,
+.ace_gutter-cell {
+  background: #1e1f25 !important;
+  color: white !important;
+}
+.ace-tm {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.topbar {
+  padding: 10px;
+  margin: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar select {
+  margin: 0 10px;
+  height: 30px;
+  width: 100px;
+  text-align: right;
+}
+.topbar button {
+  background: var(--sage);
+  border: 1px solid var(--sage);
+  padding: 0;
+  margin: 0px 7px;
+  border-radius: 5px;
+  height: 35px;
+  color: white;
+  font-family: "Cabin";
+  font-size: 15px;
+  width: 90px;
+}
+.message-container {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 1px solid white;
+}
+.message-container h1 {
+  height: 50px;
+  padding: 12px 0;
+  margin: 0;
+  display: flex;
+  background: transparent;
+  border-bottom: 1px solid white;
+  width: 100%;
+  font-size: 25px;
+  font-family: "cabin";
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.messages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 580px;
+  background: #2c2a2a;
+  margin: 0;
+  padding-top: 20px;
+  overflow-x: none;
+  overflow-y: auto;
+}
+.message-util {
+  background: #3d3d3d;
+  border-bottom-right-radius: 15px;
+  border-top: 1px solid white;
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  padding: 3px 0;
+  width: 100%;
+}
+.message-util input {
+  height: 30px;
+  padding: 0 10px;
+  margin: 0;
+  text-align: right;
+  font-family: "cabin";
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message-wrapper {
+  padding: 0 2px;
+  margin: 2px 0;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "cabin";
+}
+.message-wrapper.received {
+  justify-content: flex-start;
+}
+.message-wrapper .sent {
+  border-bottom-right-radius: 0;
+  background: #384255;
+}
+.message-wrapper .received {
+  border-bottom-left-radius: 0;
+  background: #6f82a8;
+}
+.message-wrapper > * {
+  margin: 1px 20px !important;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #444444;
+  margin: 0;
+  max-width: clamp(220px, 60%, 600px);
+  overflow-wrap: break-word;
+}
+
+/*Start Dash*/
+.dash {
+  background: #282f3c;
+  width: 100vw;
+  height: 100vh;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  font-family: "Cabin";
+  overflow: auto;
+}
+
+.dash-wrapper {
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  font-family: "Cabin";
+  position: relative;
+}
+.dash-wrapper .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dash-wrapper > .header > h1 {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.logout {
+  width: 80px;
+  height: 30px;
+  background: var(--sage);
+  color: white;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+.dash-wrapper span {
+  color: var(--sage);
+}
+.dash-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+}
+.dash-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+.dash-text h1 {
+  font-size: 65px;
+  width: 750px;
+  z-index: 1;
+}
+.dash-text .subscript {
+  width: 500px;
+  font-size: 25px;
+  color: grey;
+  margin: 0 20px;
+  position: relative;
+  font-family: "Quicksand";
+}
+.subscript:before {
+  content: "";
+  width: 2px;
+  position: absolute;
+  background: var(--sage);
+  height: 80px;
+  left: -20px;
+  top: -8px;
+}
+.dash-content button {
+  margin: 60px 0;
+  border-radius: 15px;
+  width: 400px;
+  height: 70px;
+  background: var(--sage);
+  color: white;
+  border: 1px solid transparent;
+  font-family: "Cabin";
+  font-size: 20px;
+}
+button:hover {
+  border: 1px solid #49d5ff;
+}
+.images {
+  position: absolute;
+  right: -80px;
+  margin: 0;
+  width: 750px;
+  z-index: 0;
+}
+img {
+  position: absolute;
+}
+#blue {
+  right: 400px;
+  top: 300px;
+}
+#orange {
+  right: 180px;
+  top: 20px;
+}
+#red {
+  right: 100px;
+  top: 420px;
+}
+#hello1 {
+  right: 160px;
+  top: 270px;
+}
+#hello2 {
+  right: 100px;
+  top: 640px;
+}
+#hello3 {
+  width: 150px;
+  right: 380px;
+  top: 440px;
+}
+/*End Dash*/
+/*Shell*/
+.shell {
+  width: 100%;
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #1e1f25;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin: 20px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.shell textarea {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  margin: 0;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
 }
