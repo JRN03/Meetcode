@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Meetcode/static/css/main.6bb24f68.css",
-    "main.js": "/Meetcode/static/js/main.fed99a3d.js",
+    "main.js": "/Meetcode/static/js/main.ae3d5f18.js",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/Meetcode/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont.eot": "/Meetcode/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/Meetcode/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
@@ -9,10 +9,10 @@
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/Meetcode/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/Meetcode/index.html",
     "main.6bb24f68.css.map": "/Meetcode/static/css/main.6bb24f68.css.map",
-    "main.fed99a3d.js.map": "/Meetcode/static/js/main.fed99a3d.js.map"
+    "main.ae3d5f18.js.map": "/Meetcode/static/js/main.ae3d5f18.js.map"
   },
   "entrypoints": [
     "static/css/main.6bb24f68.css",
-    "static/js/main.fed99a3d.js"
+    "static/js/main.ae3d5f18.js"
   ]
 }
